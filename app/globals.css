@@ -25,6 +25,7 @@ color: var(--color-obsidian);
 }
 
 .animate-hero-text {
-  /* We removed opacity: 0 so it stays visible the whole time */
-  animation: continuousDrift 6s ease-in-out infinite; 
+  /* Make sure 'forwards' or 'opacity: 0' are completely gone! */
+  animation: continuousDrift 6s ease-in infinite;
+  display: inline-block; /* Sometimes text needs this to transform continuously */
 }
