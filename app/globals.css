@@ -10,17 +10,21 @@ body {
 background-color: var(--color-fog);
 color: var(--color-obsidian);
 }
-@keyframes fadeSlideUp {
-0% {
-opacity: 0;
-transform: translateY(40px);
-}
-100% {
-opacity: 1;
-transform: translateY(0);
-}
+/* Custom Animations MUST go at the very bottom */
+/* Custom Animations MUST go at the very bottom */
+@keyframes continuousDrift {
+  0% { 
+    transform: translateX(-15px); 
+  }
+  50% { 
+    transform: translateX(15px); 
+  }
+  100% { 
+    transform: translateX(-15px); 
+  }
 }
 
 .animate-hero-text {
-animation: fadeSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  /* We removed opacity: 0 so it stays visible the whole time */
+  animation: continuousDrift 6s ease-in-out infinite; 
 }

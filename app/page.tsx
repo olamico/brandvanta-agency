@@ -5,9 +5,9 @@ return (
 <main className="min-h-screen bg-fog font-sans">
   {/* Section 1: Hero (The Vantage Point) */}
   <section className="bg-obsidian text-white py-32 px-6 text-center flex flex-col items-center justify-center min-h-[80vh]">
-    <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-      Your Brand, Accelerated. <span className="text-gold">Results, Multiplied.</span>
-    </h1>
+   <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight animate-hero-text">
+  Your Brand, Accelerated. <span className="text-gold">Results, Multiplied.</span>
+</h1>
     <p className="text-lg md:text-xl max-w-3xl mx-auto mb-10 text-gray-300 leading-relaxed">
       brandvanta agency is a full-service marketing partner that bridges the gap between creative ambition and commercial rigour. We don’t just build brands; we engineer growth engines that make your business impossible to ignore in an overcrowded marketplace.
     </p>
