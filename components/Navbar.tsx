@@ -25,7 +25,11 @@ return (
         priority 
       />
     </Link>
-
+<div className="absolute left-1/2 transform -translate-x-1/2 md:hidden z-0">
+          <Link href="/" onClick={closeMenu} className="text-xl font-bold tracking-tighter text-obsidian">
+            BRANDVANTA<span className="text-gold">.</span>
+          </Link>
+        </div>
     {/* Desktop Navigation Links (Hidden on Mobile) */}
     <div className="hidden md:flex space-x-8 text-sm font-bold">
       <Link href="/" className="hover:text-gold transition-colors duration-300">Home</Link>
