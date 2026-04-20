@@ -1,14 +1,21 @@
-import Link from "next/link";
 
+import Link from "next/link";
+import Image from "next/image";
 export default function Navbar() {
 return (
 <nav className="bg-obsidian text-white sticky top-0 z-50 shadow-md">
 <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
     {/* Brand Logo */}
-    <Link href="/" className="text-2xl font-bold tracking-tighter">
-      brandvanta<span className="text-gold">.</span>
+  <Link href="/">
+      <Image 
+        src="/logo.png" 
+        alt="brandvanta agency logo" 
+        width={180} 
+        height={50} 
+        className="w-auto h-8 md:h-10"
+        priority 
+      />
     </Link>
-
     {/* Navigation Links */}
     <div className="hidden md:flex space-x-8 text-sm font-medium">
       <Link href="/" className="hover:text-gold transition-colors duration-300">Home</Link>
