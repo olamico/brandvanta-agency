@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+--color-obsidian: #1C1C1C;
+--color-gold: #C5A059;
+--color-fog: #F5F5F5;
+}
+
+body {
+background-color: var(--color-fog);
+color: var(--color-obsidian);
+}
