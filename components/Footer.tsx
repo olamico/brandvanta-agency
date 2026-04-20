@@ -42,7 +42,7 @@ return (
 
   </div>
 
-  <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-800 text-sm text-center md:text-left flex flex-col md:flex-row justify-between items-center">
+  <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white-800 text-sm text-center md:text-left flex flex-col md:flex-row justify-between items-center">
     <p>&copy; {currentYear} brandvanta agency. All rights reserved.</p>
     <p className="mt-2 md:mt-0">brandvanta.agency</p>
   </div>
