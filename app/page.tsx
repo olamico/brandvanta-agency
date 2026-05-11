@@ -1,8 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
 return (
-<main className="min-h-screen bg-fog font-sans">
+<main className="min-h-screen bg-fog font-sans gap-2">
   {/* Section 1: Hero (The Vantage Point) */}
   <section className="relative text-white py-32 px-6 text-center flex flex-col items-center justify-center min-h-[80vh] bg-[url('/hero-bg.png')] bg-cover bg-center">
 
@@ -27,42 +28,110 @@ Schedule Your Strategy Session
 </section>
 
   {/* Section 2: About (The Philosophy) */}
-  <section className="py-24 px-6 max-w-5xl mx-auto text-center">
-    <h2 className="text-3xl md:text-4xl font-bold text-obsidian mb-8">
-      Strategic Insight Meets Disruptive Creativity.
-    </h2>
-    <p className="text-lg md:text-xl leading-relaxed text-gray-800">
-      At brandvanta agency, we believe that creativity without direction is merely decoration. We were founded on the principle that your visual identity, your content strategy, and your performance marketing should exist as a single, integrated team. We partner with ambitious startups and established enterprises to transform their digital presence into a measurable competitive advantage.
-    </p>
-  </section>
+      <section className="py-24 px-6 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Side: The Text */}
+          <div>
+            <h2 className="text-3xl md:text-5xl font-bold text-obsidian mb-8 tracking-tight">
+              Strategic Insight Meets <br/>
+              <span className="text-gold">Disruptive Creativity.</span>
+            </h2>
+            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+              <p>
+                At brandvanta agency, we believe that creativity without direction is merely decoration. We were founded on the principle that your visual identity, your content strategy, and your performance marketing should exist as a single, integrated team.
+              </p>
+              <p>
+                We partner with ambitious startups and established enterprises to transform their digital presence into a measurable competitive advantage.
+              </p>
+            </div>
+          </div>
 
+          {/* Right Side: The Image Box */}
+          <div className="relative h-[400px] md:h-[500px] rounded-sm overflow-hidden shadow-2xl border-l-4 border-gold">
+            
+            <Image
+              src="/hero-bg.png"
+              alt="Strategic Insight and Creativity"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+        </div>
+      </section>
   {/* Section 3: Services (The Engine) */}
-  <section className="bg-white py-24 px-6">
-    <div className="max-w-7xl mx-auto">
-      <h2 className="text-4xl font-bold text-obsidian mb-12 text-center">
-        Bespoke Solutions for Modern Growth.
-      </h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="p-10 border border-gray-200 shadow-sm hover:border-gold transition-colors duration-300">
-          <h3 className="text-2xl font-bold text-obsidian mb-4">Brand Identity & Strategy</h3>
-          <p className="text-gray-700 leading-relaxed">Developing the complete visual language and positioning of your business.</p>
-        </div>
-        <div className="p-10 border border-gray-200 shadow-sm hover:border-gold transition-colors duration-300">
-          <h3 className="text-2xl font-bold text-obsidian mb-4">Performance Marketing</h3>
-          <p className="text-gray-700 leading-relaxed">Scaling ROI through data-driven PPC and precision-targeted SEO.</p>
-        </div>
-        <div className="p-10 border border-gray-200 shadow-sm hover:border-gold transition-colors duration-300">
-          <h3 className="text-2xl font-bold text-obsidian mb-4">Social Architecture</h3>
-          <p className="text-gray-700 leading-relaxed">Building and managing engaged communities across global platforms.</p>
-        </div>
-        <div className="p-10 border border-gray-200 shadow-sm hover:border-gold transition-colors duration-300">
-          <h3 className="text-2xl font-bold text-obsidian mb-4">Content Creation</h3>
-          <p className="text-gray-700 leading-relaxed">High-impact storytelling designed to nurture leads and build long-term equity.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<section className="bg-obsidian py-24 px-6 border-t border-gray-800 relative overflow-hidden">
+  
+  {/* Subtle background glow */}
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-full bg-gold/5 blur-[120px] rounded-full pointer-events-none"></div>
 
+  <div className="max-w-7xl mx-auto relative z-10">
+    <h2 className="text-4xl font-bold text-white mb-12 text-center">
+      Bespoke Solutions for Modern Growth.
+    </h2>
+    
+    <div className="grid md:grid-cols-2 gap-8">
+      
+      {/* Card 1: Brand Identity */}
+      <div className="p-10 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-gold/50 hover:-translate-y-3 hover:shadow-2xl hover:shadow-gold/10 transition-all duration-300 group">
+        <div className="relative w-130 h-100 mb-6 rounded-lg overflow-hidden shadow-lg border border-white/10">
+          <Image 
+            src="/service-1.jpg" 
+            alt="Brand Identity" 
+            fill 
+            className="object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+        </div>
+        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-gold transition-colors">Brand Identity & Strategy</h3>
+        <p className="text-gray-400 leading-relaxed">Developing the complete visual language and positioning of your business.</p>
+      </div>
+      
+      {/* Card 2: Performance Marketing */}
+      <div className="p-10 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-gold/50 hover:-translate-y-3 hover:shadow-2xl hover:shadow-gold/10 transition-all duration-300 group">
+        <div className="relative w-130 h-100 mb-6 rounded-lg overflow-hidden shadow-lg border border-white/10">
+          <Image 
+            src="/service-2.jpg" 
+            alt="Performance Marketing" 
+            fill 
+            className="object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+        </div>
+        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-gold transition-colors">Performance Marketing</h3>
+        <p className="text-gray-400 leading-relaxed">Scaling ROI through data-driven PPC and precision-targeted SEO.</p>
+      </div>
+      
+      {/* Card 3: Social Architecture */}
+      <div className="p-10 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-gold/50 hover:-translate-y-3 hover:shadow-2xl hover:shadow-gold/10 transition-all duration-300 group">
+        <div className="relative w-130 h-100 mb-6 rounded-lg overflow-hidden shadow-lg border border-white/10">
+          <Image 
+            src="/service-3.jpg" 
+            alt="Social Architecture" 
+            fill 
+            className="object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+        </div>
+        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-gold transition-colors">Social Architecture</h3>
+        <p className="text-gray-400 leading-relaxed">Building and managing engaged communities across global platforms.</p>
+      </div>
+      
+      {/* Card 4: Content Creation */}
+      <div className="p-10 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-gold/50 hover:-translate-y-3 hover:shadow-2xl hover:shadow-gold/10 transition-all duration-300 group">
+        <div className="relative w-130 h-100 mb-6 rounded-lg overflow-hidden shadow-lg border border-white/10">
+          <Image 
+            src="/service-4.jpg" 
+            alt="Content Creation" 
+            fill 
+            className="object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+        </div>
+        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-gold transition-colors">Content Creation</h3>
+        <p className="text-gray-400 leading-relaxed">High-impact storytelling designed to nurture leads and build long-term equity.</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
   {/* Section 4: Why Choose Us (The brandvanta Edge) */}
   <section className="bg-obsidian text-white py-24 px-6">
     <div className="max-w-4xl mx-auto text-center">
@@ -74,7 +143,7 @@ Schedule Your Strategy Session
   </section>
 
   {/* Section 5: Our Process (The Blueprint) */}
-  <section className="py-24 px-6 max-w-7xl mx-auto">
+  <section className="py-24 px-6 max-w-7xl mx-auto bg-[url('/hero-bg.png')] bg-cover bg-center">
     <h2 className="text-4xl font-bold text-obsidian mb-16 text-center">Our Process</h2>
     <div className="grid md:grid-cols-4 gap-8 text-center">
       <div>
