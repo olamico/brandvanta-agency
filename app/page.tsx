@@ -80,6 +80,7 @@ Schedule Your Strategy Session
             src="/service-1.jpg" 
             alt="Brand Identity" 
             fill 
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover group-hover:scale-110 transition-transform duration-500"
           />
         </div>
@@ -94,6 +95,7 @@ Schedule Your Strategy Session
             src="/service-2.jpg" 
             alt="Performance Marketing" 
             fill 
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover group-hover:scale-110 transition-transform duration-500"
           />
         </div>
@@ -103,11 +105,12 @@ Schedule Your Strategy Session
       
       {/* Card 3: Social Architecture */}
       <div className="p-10 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-gold/50 hover:-translate-y-3 hover:shadow-2xl hover:shadow-gold/10 transition-all duration-300 group">
-        <div className="relative w-130 h-100 mb-6 rounded-lg overflow-hidden shadow-lg border border-white/10">
+        <div className="relative w-full aspect-video mb-6 rounded-lg overflow-hidden shadow-lg border border-white/10">
           <Image 
             src="/service-3.jpg" 
             alt="Social Architecture" 
             fill 
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover group-hover:scale-110 transition-transform duration-500"
           />
         </div>
@@ -117,11 +120,12 @@ Schedule Your Strategy Session
       
       {/* Card 4: Content Creation */}
       <div className="p-10 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-gold/50 hover:-translate-y-3 hover:shadow-2xl hover:shadow-gold/10 transition-all duration-300 group">
-        <div className="relative w-130 h-100 mb-6 rounded-lg overflow-hidden shadow-lg border border-white/10">
+        <div className="relative w-full aspect-video mb-6 rounded-lg overflow-hidden shadow-lg border border-white/10">
           <Image 
             src="/service-4.jpg" 
             alt="Content Creation" 
             fill 
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover group-hover:scale-110 transition-transform duration-500"
           />
         </div>
