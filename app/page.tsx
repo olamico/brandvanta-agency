@@ -1,7 +1,28 @@
+"use client";
+
+import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
+  useEffect(() => {
+    const revealElements = document.querySelectorAll<HTMLElement>("[data-reveal]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }s
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
 return (
 <main className="min-h-screen bg-fog font-sans gap-2 overflow-x-hidden animate-page-enter">
   {/* Section 1: Hero (The Vantage Point) */}
@@ -28,7 +49,7 @@ Schedule Your Strategy Session
 </section>
 
   {/* Section 2: About (The Philosophy) */}
-      <section className="py-24 px-6 max-w-7xl mx-auto animate-fade-up animate-delay-1">
+      <section data-reveal className="py-24 px-6 max-w-7xl mx-auto reveal-section">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           
           {/* Left Side: The Text */}
@@ -61,7 +82,7 @@ Schedule Your Strategy Session
         </div>
       </section>
   {/* Section 3: Services (The Engine) */}
-<section className="bg-obsidian py-24 px-6 border-t border-gray-800 relative overflow-hidden">
+<section data-reveal className="bg-obsidian py-24 px-6 border-t border-gray-800 relative overflow-hidden reveal-section">
   
   {/* Subtle background glow */}
   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-full bg-gold/5 blur-[120px] rounded-full pointer-events-none"></div>
@@ -137,7 +158,7 @@ Schedule Your Strategy Session
   </div>
 </section>
   {/* Section 4: Why Choose Us (The brandvanta Edge) */}
-  <section className="bg-obsidian text-white py-24 px-6 animate-fade-up animate-delay-2">
+  <section data-reveal className="bg-obsidian text-white py-24 px-6 reveal-section">
     <div className="max-w-4xl mx-auto text-center">
       <h2 className="text-4xl font-bold text-gold mb-8 animate-fade-up animate-delay-3">Strategy First, Always.</h2>
       <p className="text-lg leading-relaxed text-gray-300">
@@ -147,7 +168,7 @@ Schedule Your Strategy Session
   </section>
 
   {/* Section 5: Our Process (The Blueprint) */}
-  <section className="relative py-24 px-6 animate-fade-up animate-delay-2">
+  <section data-reveal className="relative py-24 px-6 reveal-section">
     <div className="pointer-events-none absolute inset-0 bg-[url('/hero-bg.png')] bg-cover bg-center opacity-10 animate-soft-pulse"></div>
     <div className="relative max-w-7xl mx-auto rounded-[2rem] bg-white/95 shadow-2xl ring-1 ring-black/5 p-10 sm:p-12 animate-fade-up animate-delay-3">
       <h2 className="text-4xl font-bold text-obsidian mb-12 text-center">Our Process</h2>
@@ -177,7 +198,7 @@ Schedule Your Strategy Session
   </section>
 
   {/* Section 6: CTA (The Next Step) */}
-  <section className="bg-gold text-obsidian py-24 px-6 text-center animate-fade-up animate-delay-3">
+  <section data-reveal className="bg-gold text-obsidian py-24 px-6 text-center reveal-section">
     <h2 className="text-4xl font-bold mb-6 animate-fade-up animate-delay-4">Ready to Define Your Future?</h2>
     <p className="text-xl mb-10 max-w-2xl mx-auto font-medium animate-fade-up animate-delay-5">
       Stop guessing and start growing. Let’s talk about what’s possible for your brand.
