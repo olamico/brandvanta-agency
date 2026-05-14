@@ -10,63 +10,19 @@ body {
 background-color: var(--color-fog);
 color: var(--color-obsidian);
 }
-/* Custom Animations MUST go at the very bottom */
+
 /* Custom Animations MUST go at the very bottom */
 @keyframes continuousDrift {
-  0% { 
-    transform: translateX(-15px); 
-  }
-  50% { 
-    transform: translateX(15px); 
-  }
-  100% { 
-    transform: translateX(-15px); 
-  }
-}
-
-.animate-hero-text {
-  /* Make sure 'forwards' or 'opacity: 0' are completely gone! */
-  animation: continuousDrift 6s ease-in infinite;
-  display: inline-block; /* Sometimes text needs this to transform continuously */
-}@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 16px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes softPulse {
-  0%, 100% {
-    opacity: 0.08;
-    transform: scale(1);
+  0% {
+    transform: translateX(-15px);
   }
   50% {
-    opacity: 0.14;
-    transform: scale(1.02);
+    transform: translateX(15px);
+  }
+  100% {
+    transform: translateX(-15px);
   }
 }
-
-.animate-fade-up {
-  opacity: 0;
-  animation: fadeUp 0.9s ease-out forwards;
-}
-
-.animate-soft-pulse {
-  animation: softPulse 10s ease-in-out infinite;
-}
-
-.animate-delay-0 { animation-delay: 0.12s; }
-.animate-delay-1 { animation-delay: 0.24s; }
-.animate-delay-2 { animation-delay: 0.36s; }
-.animate-delay-3 { animation-delay: 0.48s; }
-.animate-delay-4 { animation-delay: 0.60s; }
-.animate-delay-5 { animation-delay: 0.72s; }
-.animate-delay-6 { animation-delay: 0.84s; }
-.animate-delay-7 { animation-delay: 0.96s; }
 
 @keyframes fadeUp {
   from {
@@ -90,6 +46,26 @@ color: var(--color-obsidian);
   }
 }
 
+@keyframes pageEntrance {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0) perspective(1000px) rotateX(6deg) scale(0.98);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -6px, 0) perspective(1000px) rotateX(1deg) scale(0.995);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) perspective(1000px) rotateX(0deg) scale(1);
+  }
+}
+
+.animate-hero-text {
+  animation: continuousDrift 6s ease-in infinite;
+  display: inline-block;
+}
+
 .animate-fade-up {
   opacity: 0;
   animation: fadeUp 0.9s ease-out forwards;
@@ -97,6 +73,13 @@ color: var(--color-obsidian);
 
 .animate-soft-pulse {
   animation: softPulse 10s ease-in-out infinite;
+}
+
+.animate-page-enter {
+  opacity: 0;
+  animation: pageEntrance 0.9s ease-out forwards;
+  transform-origin: top center;
+  will-change: transform, opacity;
 }
 
 .animate-delay-0 { animation-delay: 0.12s; }

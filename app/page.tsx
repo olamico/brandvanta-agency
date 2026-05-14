@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
 return (
-<main className="min-h-screen bg-fog font-sans gap-2 overflow-x-hidden">
+<main className="min-h-screen bg-fog font-sans gap-2 overflow-x-hidden animate-page-enter">
   {/* Section 1: Hero (The Vantage Point) */}
   <section className="relative text-white py-32 px-6 text-center flex flex-col items-center justify-center min-h-[80vh] bg-[url('/hero-bg.png')] bg-cover bg-center animate-fade-up">
 
